@@ -26,28 +26,6 @@ void PrintBuildCrashInfo()
     CrashLog("Build times: %s %s. ABI: %s", __TIME__, __DATE__, (VER_x32 ? "armeabi-v7a" : "arm64-v8a"));
 }
 
-void handler3(int signum, siginfo_t* info, void* contextPtr)
-{
-    ucontext* context = (ucontext_t*)contextPtr;
-
-    if (act3_old.sa_sigaction)
-    {
-        act3_old.sa_sigaction(signum, info, contextPtr);
-    }
-
-    if (info->si_signo == SIGBUS)
-    {
-        PrintBuildCrashInfo();
-
-        CrashLog("SIGBUS | Fault address: 0x%X", info->si_addr);
-
-        PRINT_CRASH_STATES(context);
-
-        CStackTrace::printBacktrace();
-    }
-
-}
-
 void handler(int signum, siginfo_t *info, void* contextPtr)
 {
     ucontext* context = (ucontext_t*)contextPtr;
@@ -63,6 +41,28 @@ void handler(int signum, siginfo_t *info, void* contextPtr)
         PrintBuildCrashInfo();
 
         CrashLog("SIGSEGV | Fault address: 0x%X", info->si_addr);
+
+        PRINT_CRASH_STATES(context);
+
+        CStackTrace::printBacktrace();
+    }
+}
+
+void handler1(int signum, siginfo_t* info, void* contextPtr)
+{
+    auto context = (ucontext_t*)contextPtr;
+
+    if (act1_old.sa_sigaction)
+    {
+        act1_old.sa_sigaction(signum, info, contextPtr);
+    }
+
+    if (info->si_signo == SIGABRT)
+    {
+        CrashLog(" ");
+        PrintBuildCrashInfo();
+
+        CrashLog("SIGABRT | Fault address: 0x%X", info->si_addr);
 
         PRINT_CRASH_STATES(context);
 
@@ -93,21 +93,20 @@ void handler2(int signum, siginfo_t* info, void* contextPtr)
 
 }
 
-void handler1(int signum, siginfo_t* info, void* contextPtr)
+void handler3(int signum, siginfo_t* info, void* contextPtr)
 {
-    auto context = (ucontext_t*)contextPtr;
+    ucontext* context = (ucontext_t*)contextPtr;
 
-    if (act1_old.sa_sigaction)
+    if (act3_old.sa_sigaction)
     {
-        act1_old.sa_sigaction(signum, info, contextPtr);
+        act3_old.sa_sigaction(signum, info, contextPtr);
     }
 
-    if (info->si_signo == SIGABRT)
+    if (info->si_signo == SIGBUS)
     {
-        CrashLog(" ");
         PrintBuildCrashInfo();
 
-        CrashLog("SIGABRT | Fault address: 0x%X", info->si_addr);
+        CrashLog("SIGBUS | Fault address: 0x%X", info->si_addr);
 
         PRINT_CRASH_STATES(context);
 

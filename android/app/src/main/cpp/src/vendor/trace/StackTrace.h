@@ -5,7 +5,8 @@
 #include <execinfo.h>
 #include <dlfcn.h>
 #include <unwind.h>
-#include "main.h"
+
+#include "../../main.h"
 
 #if VER_x32
 #define PRINT_CRASH_STATES(context) \
@@ -16,17 +17,15 @@
 	CrashLog("ip: 0x%x, sp: 0x%x, lr: 0x%x, pc: 0x%x", (context)->uc_mcontext.arm_ip, (context)->uc_mcontext.arm_sp, (context)->uc_mcontext.arm_lr, (context)->uc_mcontext.arm_pc); \
     CrashLog("1: libGTASA.so + 0x%X", context->uc_mcontext.arm_pc - g_libGTASA); \
     CrashLog("2: libGTASA.so + 0x%X", context->uc_mcontext.arm_lr - g_libGTASA); \
-    CrashLog("1: libAUTOM.so + 0x%X", context->uc_mcontext.arm_pc - g_libAUTOM); \
-    CrashLog("2: libAUTOM.so + 0x%X", context->uc_mcontext.arm_lr - g_libAUTOM);
+    CrashLog("1: libreGTA.so + 0x%X", context->uc_mcontext.arm_pc - g_libREGTA); \
+    CrashLog("2: libreGTA.so + 0x%X", context->uc_mcontext.arm_lr - g_libREGTA);
 #else
 #define PRINT_CRASH_STATES(context) \
     CrashLog("1: libGTASA.so + 0x%llx", context->uc_mcontext.pc - g_libGTASA); \
     CrashLog("2: libGTASA.so + 0x%llx", context->uc_mcontext.regs[30] - g_libGTASA); \
-    CrashLog("1: libAUTOM.so + 0x%llx", context->uc_mcontext.pc - g_libAUTOM); \
-    CrashLog("2: libAUTOM.so + 0x%llx", context->uc_mcontext.regs[30] - g_libAUTOM);
+    CrashLog("1: libREGTA.so + 0x%llx", context->uc_mcontext.pc - g_libREGTA); \
+    CrashLog("2: libREGTA.so + 0x%llx", context->uc_mcontext.regs[30] - g_libREGTA);
 #endif
-
-void CrashLog(const char* fmt, ...);
 
 class CStackTrace
 {
@@ -44,15 +43,15 @@ private:
 
         Dl_info info;
         if (dladdr(reinterpret_cast<void*>(pc), &info) && info.dli_sname != nullptr) {
-            CrashLog("[adr: %p autom: %p gta: %p] %s\n",
+            CrashLog("[adr: %p regta: %p gta: %p] %s\n",
                      reinterpret_cast<void*>(pc),
-                     reinterpret_cast<void*>(pc - g_libAUTOM),
+                     reinterpret_cast<void*>(pc - g_libREGTA),
                      reinterpret_cast<void*>(pc - g_libGTASA),
                      info.dli_sname);
         } else {
-            CrashLog("[adr: %p autom: %p gta: %p] name not found\n",
+            CrashLog("[adr: %p regta: %p gta: %p] name not found\n",
                      reinterpret_cast<void*>(pc),
-                     reinterpret_cast<void*>(pc - g_libAUTOM),
+                     reinterpret_cast<void*>(pc - g_libREGTA),
                      reinterpret_cast<void*>(pc - g_libGTASA));
         }
 
@@ -62,5 +61,4 @@ private:
     static void PrintStackTrace() {
         _Unwind_Backtrace(TraceFunction, nullptr);
     }
-
 };

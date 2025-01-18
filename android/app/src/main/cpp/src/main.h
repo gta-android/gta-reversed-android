@@ -1,16 +1,30 @@
 //
-// Created by unk.cs on 17/01/2025.
+// Created by SyXhOwN on 17/01/2025.
 //
 
-#ifndef GTA_REVERSED_MAIN_H
-#define GTA_REVERSED_MAIN_H
+#pragma once
 
+#include <cstdlib>
+#include <string>
+#include <vector>
+#include <list>
+#include <unistd.h>
+#include <sys/mman.h>
+#include <cassert>
+#include <dlfcn.h>
+#include <jni.h>
+#include <android/log.h>
+#include <ucontext.h>
+#include <pthread.h>
 
+// Patch
+#include "vendor/patch/patch.h"
 
-class main {
+// Log
+#include "vendor/log/Log.h"
 
-};
+// JavaWrapper
+#include "vendor/javawrapper/JavaWrapper.h"
 
-
-
-#endif //GTA_REVERSED_MAIN_H
+extern uintptr_t g_libGTASA;
+extern uintptr_t g_libREGTA;

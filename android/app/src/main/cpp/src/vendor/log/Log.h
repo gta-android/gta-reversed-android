@@ -1,16 +1,19 @@
 //
-// Created by unk.cs on 17/01/2025.
+// Created by SyXhOwN on 17/01/2025.
 //
 
-#ifndef GTA_REVERSED_LOG_H
-#define GTA_REVERSED_LOG_H
+#pragma once
 
+#include "../../main.h"
 
+#define NDEBUG  false
+#define USE_FILE_LOG    false
 
-class Log {
+void Log(const char *fmt, ...);
+void CrashLog(const char* fmt, ...);
 
-};
-
-
-
-#endif //GTA_REVERSED_LOG_H
+#ifdef NDEBUG
+#define DLOG(...)
+#else
+#define DLOG(...) __android_log_print(ANDROID_LOG_DEBUG, "LOG_TAG", __VA_ARGS__)
+#endif

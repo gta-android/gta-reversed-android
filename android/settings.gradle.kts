@@ -1,4 +1,4 @@
-rootProject.name = "GTA Reversed"
+rootProject.name = "reGTA"
 include(":app")
 
 dependencyResolutionManagement {

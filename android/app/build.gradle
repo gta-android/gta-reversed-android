@@ -17,7 +17,7 @@ android {
         targetSdk 34
 
         applicationId "com.gta.reversed"
-        versionName "GTA-Reversed-0.0.1"
+        versionName "reGTA-0.0.1"
         versionCode 1
 
         multiDexEnabled = true

@@ -2,10 +2,12 @@
 // Created by SyXhOwN on 19/01/2025.
 //
 
-#include "reGTA.h"
+#include "StdInc.h"
+
 #include "Vendor/ReversibleHooks/ReversibleHooks.h"
 
 void InjectReversedClasses()
 {
-    // TODO:
+    // TODO: Implement Hooks of each inverted class below
+    // TODO: Example: CClothes::InjectHooks();
 }

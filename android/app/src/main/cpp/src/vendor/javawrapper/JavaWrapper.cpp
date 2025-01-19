@@ -4,7 +4,8 @@
 
 #include "JavaWrapper.h"
 
-#include "../../main.h"
+#include "../../reGTA.h"
+#include "../Log/Log.h"
 
 extern "C" JavaVM *javaVM;
 
@@ -14,7 +15,7 @@ JNIEnv *CJavaWrapper::GetEnv() {
 
     if (getEnvStat == JNI_EDETACHED) {
         Log("GetEnv: not attached");
-        if (javaVM->AttachCurrentThread(&env, NULL) != 0) {
+        if (javaVM->AttachCurrentThread(&env, nullptr) != 0) { // Original = NULL
             Log("Failed to attach");
             return nullptr;
         }

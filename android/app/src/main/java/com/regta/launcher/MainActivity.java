@@ -1,4 +1,4 @@
-package com.gta.launcher;
+package com.regta.launcher;
 
 import android.Manifest;
 import android.content.Intent;
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.gta.reversed.REGTA;
+import com.regta.core.REGTA;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.gta.reversed;
+package com.regta.core;
 
 import android.os.Bundle;
 import android.util.Log;

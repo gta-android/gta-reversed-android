@@ -2,10 +2,10 @@
 // Created by SyXhOwN on 17/01/2025.
 //
 
-#include "main.h"
+#include "reGTA.h"
+#include "ReversibleHooks/ReversibleHooks.h"
 
-#include "vendor/patch/patch.h"
-
+// TODO: In the future this will be moved
 int GetInputType() {
     return 0;
 }
@@ -13,5 +13,5 @@ int GetInputType() {
 void InstallHooks()
 {
     // Fix mouse/keyboard bad
-    Patch::Redirect("_ZN4CHID12GetInputTypeEv", &GetInputType);
+    ReversibleHooks::Redirect("_ZN4CHID12GetInputTypeEv", &GetInputType);
 }

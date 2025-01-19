@@ -13,22 +13,30 @@ endif()
 file(GLOB_RECURSE SOURCES
         ${CMAKE_CURRENT_LIST_DIR}/*.cpp
 
-        # Header Files
+        # Header Files Code
         #${CMAKE_CURRENT_LIST_DIR}/Code/*.cpp
         #${CMAKE_CURRENT_LIST_DIR}/Code/**/*.cpp
         #${CMAKE_CURRENT_LIST_DIR}/Code/**/**/*.cpp
         #${CMAKE_CURRENT_LIST_DIR}/Code/**/**/**/*.cpp
         #${CMAKE_CURRENT_LIST_DIR}/Code/**/**/**/*/*.cpp
 
-        # vendor - notsa
-        ${CMAKE_CURRENT_LIST_DIR}/vendor/javawrapper/*.cpp
-        ${CMAKE_CURRENT_LIST_DIR}/vendor/log/*.cpp
+        # Header Files RWMBR
+        #${CMAKE_CURRENT_LIST_DIR}/RWMBR/SDK/*.cpp
+        #${CMAKE_CURRENT_LIST_DIR}/RWMBR/SDK/**/*.cpp
+        #${CMAKE_CURRENT_LIST_DIR}/RWMBR/SDK/**/**/*.cpp
+        #${CMAKE_CURRENT_LIST_DIR}/RWMBR/SDK/**/**/**/*.cpp
+        #${CMAKE_CURRENT_LIST_DIR}/RWMBR/SDK/**/**/**/*/*.cpp
+
+        # Vendor - NOTSA
+        ${CMAKE_CURRENT_LIST_DIR}/Vendor/ReversibleHooks/*.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/Vendor/JavaWrapper/*.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/Vendor/Log/*.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/Vendor/Trace/*.cpp
 )
 
 # Add include directories
 include_directories(
-        #${CMAKE_CURRENT_LIST_DIR}/Code/
-        ${CMAKE_CURRENT_LIST_DIR}/vendor/
+        ${CMAKE_CURRENT_LIST_DIR}/Vendor/
 )
 
 add_library(reGTA SHARED ${SOURCES})

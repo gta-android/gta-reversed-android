@@ -18,7 +18,7 @@ Wanna get started? It’s simple! Follow these steps:
 
 3. **Open it in Android Studio**  
    - Launch Android Studio.  
-   - Click **"Open"** and select the folder where you just cloned the project.  
+   - Click **"Open"** and select the folder where you just cloned the project and select the ANDROID folder.
 
 4. **Install dependencies**  
    Android Studio should automatically detect and set up the dependencies. If not, go to **File > Sync Project with Gradle Files**.  

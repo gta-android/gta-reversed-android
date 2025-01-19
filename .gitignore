@@ -35,3 +35,10 @@ google-services.json
 
 # Private Patch
 patch.h
+
+# Ignore archives IDA
+libGTASA.so.id0
+libGTASA.so.id1
+libGTASA.so.id2
+libGTASA.so.nam
+libGTASA.so.til

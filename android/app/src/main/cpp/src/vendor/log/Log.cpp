@@ -15,7 +15,7 @@ void Log(const char *fmt, ...)
     vsnprintf(buffer, sizeof(buffer), fmt, arg);
     va_end(arg);
 
-    __android_log_write(ANDROID_LOG_INFO, "AXL", buffer);
+    __android_log_write(ANDROID_LOG_INFO, "LOG", buffer);
 
 #if USE_FILE_LOG
 	static FILE* flLog = nullptr;
@@ -42,7 +42,7 @@ void CrashLog(const char* fmt, ...)
     vsnprintf(buffer, sizeof(buffer), fmt, arg);
     va_end(arg);
 
-    __android_log_write(ANDROID_LOG_FATAL, "AXL", buffer);
+    __android_log_write(ANDROID_LOG_FATAL, "CRASH", buffer);
 
 #if USE_FILE_LOG
     static FILE* flLog = nullptr;

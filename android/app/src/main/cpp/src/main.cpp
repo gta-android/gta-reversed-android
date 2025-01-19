@@ -23,7 +23,7 @@ void PrintBuildCrashInfo()
     std::tm* timeInfo = std::localtime(&currentTime);
 
     CrashLog("Crash time: %d:%d:%d %d:%d:%d", timeInfo->tm_mday, timeInfo->tm_mon, timeInfo->tm_year, timeInfo->tm_hour, timeInfo->tm_min, timeInfo->tm_sec);
-    CrashLog("Build times: %s %s. ABI: %s", __TIME__, __DATE__, (VER_x32 ? "armeabi-v7a" : "arm64-v8a"));
+    CrashLog("Build times: %s %s. ABI: %s", __TIME__, __DATE__, (VERSION_x32 ? "armeabi-v7a" : "arm64-v8a"));
 }
 
 void handler(int signum, siginfo_t *info, void* contextPtr)

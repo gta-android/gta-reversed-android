@@ -8,7 +8,7 @@
 
 #include "../../main.h"
 
-#if VER_x32
+#if VERSION_x32
 #define PRINT_CRASH_STATES(context) \
 	CrashLog("register states:"); \
 	CrashLog("r0: 0x%X, r1: 0x%X, r2: 0x%X, r3: 0x%X", (context)->uc_mcontext.arm_r0, (context)->uc_mcontext.arm_r1, (context)->uc_mcontext.arm_r2, (context)->uc_mcontext.arm_r3); \

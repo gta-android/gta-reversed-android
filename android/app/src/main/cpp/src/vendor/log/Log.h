@@ -15,5 +15,5 @@ void CrashLog(const char* fmt, ...);
 #ifdef NDEBUG
 #define DLOG(...)
 #else
-#define DLOG(...) __android_log_print(ANDROID_LOG_DEBUG, "LOG_TAG", __VA_ARGS__)
+#define DLOG(...) __android_log_print(ANDROID_LOG_DEBUG, "DEBUG", __VA_ARGS__)
 #endif

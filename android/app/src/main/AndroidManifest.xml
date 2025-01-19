@@ -36,7 +36,7 @@
         android:icon="@mipmap/ic_launcher"
         android:isGame="true"
         android:appCategory="game"
-        android:label="GTA Reversed"
+        android:label="reGTA"
         android:largeHeap="true"
         android:logo="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"

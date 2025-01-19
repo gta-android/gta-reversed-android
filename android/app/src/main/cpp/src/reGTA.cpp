@@ -5,7 +5,7 @@
 #include "main.h"
 
 // Trace
-#include "vendor/trace/StackTrace.h"
+#include "Vendor/Trace/StackTrace.h"
 
 void InstallHooks();
 

@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "../../main.h"
+#include "../../reGTA.h"
 
 #define NDEBUG  false
 #define USE_FILE_LOG    false

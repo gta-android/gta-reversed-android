@@ -17,14 +17,5 @@
 #include <ucontext.h>
 #include <pthread.h>
 
-// Patch
-#include "vendor/patch/patch.h"
-
-// Log
-#include "vendor/log/Log.h"
-
-// JavaWrapper
-#include "vendor/javawrapper/JavaWrapper.h"
-
 extern uintptr_t g_libGTASA;
 extern uintptr_t g_libREGTA;

@@ -1,6 +1,7 @@
 # Gradle files
 .gradle/
 build/
+release/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -33,8 +34,8 @@ google-services.json
 *.hprof
 *.dm
 
-# Private Patch
-patch.h
+# Private ReversibleHooks
+ReversibleHooks.h
 
 # Ignore archives IDA
 libGTASA.so.id0

@@ -1,6 +1,9 @@
-### GTA Reversed Android
+## gtasa-reversed-android [![Build Status](https://github.com/gta-android/gta-reversed-android/workflows/Build/badge.svg?event=push&branch=master)](https://github.com/gta-android/gta-reversed-android/actions?query=workflow%3ABuild)
 
-Reimplementation of GTA:SA 2.10 Android
+A project to reverse Grand Theft Auto San Andreas version Android completely, and to rewrite and document every function.
+
+### Coding Guidelines 
+Before you start writing code, please make sure to read the [coding guidelines](docs/CodingGuidelines.MD) for this project.
 
 ### How to Set Up and Build in Android Studio 
 
@@ -38,5 +41,5 @@ Wanna get started? It’s simple! Follow these steps:
 Discord: [GTA Android](https://discord.gg/Nr4MfSEGXd)   
 
 ### Credits
-- All contributors of the [gta-reversed-pc](https://github.com/gta-reversed/gta-reversed).
+- All contributors to the original PC version project [gta-reversed-pc](https://github.com/gta-reversed/gta-reversed).
 - And everyone who contributed to GTA:SA reversing.

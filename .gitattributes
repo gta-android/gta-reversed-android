@@ -1,2 +1,0 @@
-*.so filter=lfs diff=lfs merge=lfs -text
-*.i64 filter=lfs diff=lfs merge=lfs -text

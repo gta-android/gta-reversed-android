@@ -1,4 +1,4 @@
-## gtasa-reversed-android [![Build Status](https://github.com/gta-android/gta-reversed-android/workflows/Build/badge.svg?event=push&branch=master)](https://github.com/gta-android/gta-reversed-android/actions?query=workflow%3ABuild)
+## gtasa-reversed-android
 
 A project to reverse Grand Theft Auto San Andreas version Android completely, and to rewrite and document every function.
 

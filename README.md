@@ -38,5 +38,5 @@ Wanna get started? It’s simple! Follow these steps:
 Discord: [GTA Android](https://discord.gg/Nr4MfSEGXd)   
 
 ### Credits
-- All contributors of the [gta-reversed](https://github.com/gta-reversed/gta-reversed).
+- All contributors of the [gta-reversed-pc](https://github.com/gta-reversed/gta-reversed).
 - And everyone who contributed to GTA:SA reversing.

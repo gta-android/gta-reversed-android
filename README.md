@@ -1,6 +1,6 @@
-### GTA Android
+### GTA Reversed Android
 
-Ongoing decompilation of GTA:SA Android 2.10
+Reimplementation of GTA:SA 2.10 Android
 
 ### How to Set Up and Build in Android Studio 
 

@@ -18,16 +18,13 @@ jobs:
         uses: actions/setup-java@v4.0.0
         with:
           java-version: '17'
-          distribution: 'adopt'
-
+          distribution: 'temurin'
+          
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
       - name: Build with Gradle
-      
-        with:
-          path: android/
-        run: ./android/gradlew build
+        run: cd android && ./gradlew build
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.3

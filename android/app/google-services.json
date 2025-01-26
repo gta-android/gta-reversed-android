@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "867232779970",
+    "project_id": "regta-reversed",
+    "storage_bucket": "regta-reversed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:867232779970:android:fb7f85cda38ce6adbb755b",
+        "android_client_info": {
+          "package_name": "com.regta.core"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6q-7r7fWZGDKL9NfYLhJKQ3K_RJSO94U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

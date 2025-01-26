@@ -28,7 +28,7 @@ output.json
 *.keystore
 
 # Google Services (e.g. APIs or Firebase)
-google-services.json
+#google-services.json
 
 # Android Profiling
 *.hprof
@@ -36,10 +36,3 @@ google-services.json
 
 # Private ReversibleHooks
 ReversibleHooks.h
-
-# Ignore archives IDA
-libGTASA.so.id0
-libGTASA.so.id1
-libGTASA.so.id2
-libGTASA.so.nam
-libGTASA.so.til

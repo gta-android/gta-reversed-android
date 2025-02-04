@@ -18,7 +18,10 @@ import pub.devrel.easypermissions.EasyPermissions;
 public class MainActivity extends Activity implements EasyPermissions.PermissionCallbacks {
 
     private static final int MAIN_PERMISSIONS_REQUEST_CODE = 300;
-    String[] main_permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
+    String[] main_permissions = {
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,10 @@ public class MainActivity extends Activity implements EasyPermissions.Permission
             startActivity(new Intent(this, REGTA.class));
             this.finish();
         } else {
-            EasyPermissions.requestPermissions(this, "The application needs permission to write to memory", MAIN_PERMISSIONS_REQUEST_CODE, main_permissions);
+            EasyPermissions.requestPermissions(this,
+                    "The application needs permission to write to memory",
+                    MAIN_PERMISSIONS_REQUEST_CODE, main_permissions
+            );
         }
     }
 

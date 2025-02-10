@@ -29,58 +29,55 @@ import android.os.Environment;
 /**
  * A helper class used to aid native code.
  * Normally you would not use this code in Java, but rather use the NvUtil* functions
- * in your native code by including <nv_util/nv_util.h>  
+ * in your native code by including <nv_util/nv_util.h>
  */
-public class NvUtil
-{
-	private HashMap<String, String> appLocalValues;
-	private static NvUtil instance = new NvUtil();
-	private Activity activity = null;
+public class NvUtil {
+    private HashMap<String, String> appLocalValues;
+    private static NvUtil instance = new NvUtil();
+    private Activity activity = null;
 
-	private NvUtil()
-	{
-		appLocalValues = new HashMap<String, String>();
-		appLocalValues.put("STORAGE_ROOT", 
-			Environment.getExternalStorageDirectory().getAbsolutePath());
-	}
+    private NvUtil() {
+        appLocalValues = new HashMap<String, String>();
+        appLocalValues.put("STORAGE_ROOT",
+                Environment.getExternalStorageDirectory().getAbsolutePath());
+    }
 
-	public void setActivity(Activity activity)
-	{
-		this.activity = activity; 
-	}
-	public static NvUtil getInstance()
-	{
-		return instance;
-	}
+    public void setActivity(Activity activity) {
+        this.activity = activity;
+    }
 
-	/**
-	 * Checks whether a key is in the app local value list
-	 * @param key The key to test
-	 * @return Whether or not the key is in the app local value list
-	 */
-    public boolean hasAppLocalValue(String key)
-    {
-		return appLocalValues.containsKey(key);
+    public static NvUtil getInstance() {
+        return instance;
+    }
+
+    /**
+     * Checks whether a key is in the app local value list
+     *
+     * @param key The key to test
+     * @return Whether or not the key is in the app local value list
+     */
+    public boolean hasAppLocalValue(String key) {
+        return appLocalValues.containsKey(key);
     }
 
     /**
      * Get the specified key value from the app local value list
+     *
      * @param key The key to get the value of
      * @return The key's value
      */
-    public String getAppLocalValue(String key)
-    {
-		return appLocalValues.get(key);
+    public String getAppLocalValue(String key) {
+        return appLocalValues.get(key);
     }
 
     /**
      * Set the specified key value in the app local value list
-     * @param key The key to set the value of
+     *
+     * @param key   The key to set the value of
      * @param value The value
      */
-    public void setAppLocalValue(String key, String value)
-    {
-		appLocalValues.put(key, value);
+    public void setAppLocalValue(String key, String value) {
+        appLocalValues.put(key, value);
     }
 
     /**
@@ -89,12 +86,11 @@ public class NvUtil
      * adb shell am start -a android.intent.action.MAIN -n com.nvidia.devtech.water/com.nvidia.devtech.water.Water -e param1 1 -e param2 2
      * </pre>
      * Where "param1" and "param2" are the parameter names and "1" and "2" are the parameter values.
-     *  
+     *
      * @param paramName The name of the parameter to get
      * @return The parameter
      */
-    public String getParameter(String paramName)
-    {
-    	return activity.getIntent().getStringExtra(paramName);
+    public String getParameter(String paramName) {
+        return activity.getIntent().getStringExtra(paramName);
     }
 }
